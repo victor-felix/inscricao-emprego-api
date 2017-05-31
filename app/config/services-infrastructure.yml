@@ -1,0 +1,8 @@
+services:
+    infra.serializer.service:
+        class: Infrastructure\Service\SerializerService
+        arguments: ['@serializer']
+
+    infra.json_response.service:
+        class: Infrastructure\Service\JsonResponseService
+        arguments: ['@infra.serializer.service']

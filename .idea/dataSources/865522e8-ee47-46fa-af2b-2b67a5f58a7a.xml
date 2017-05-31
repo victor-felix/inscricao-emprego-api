@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="inscricao_emprego@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.0">
+    <root id="1"/>
+    <schema id="2" parent="1" name="inscricao_emprego">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="mysql"/>
+    <schema id="5" parent="1" name="performance_schema"/>
+    <table id="6" parent="2" name="tb_candidato"/>
+    <table id="7" parent="2" name="tb_inscricao"/>
+    <column id="8" parent="6" name="id_candidato">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <key id="9" parent="6" name="PRIMARY">
+      <ColNames>id_candidato</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="10" parent="7" name="id_inscricao">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="11" parent="7" name="id_candidato">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="12" parent="7" name="IDX_5439E49CA852DB7D">
+      <ColNames>id_candidato</ColNames>
+    </index>
+    <key id="13" parent="7" name="PRIMARY">
+      <ColNames>id_inscricao</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="14" parent="7" name="FK_5439E49CA852DB7D">
+      <ColNames>id_candidato</ColNames>
+      <RefSchemaName>inscricao_emprego</RefSchemaName>
+      <RefTableName>tb_candidato</RefTableName>
+      <RefColNames>id_candidato</RefColNames>
+    </foreign-key>
+  </database-model>
+</dataSource>

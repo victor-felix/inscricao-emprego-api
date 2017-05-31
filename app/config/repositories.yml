@@ -1,0 +1,6 @@
+services:
+    inscricao.repository:
+        class:  Infrastructure\Persistence\Doctrine\InscricaoRepository
+        factory: ['@doctrine.orm.default_entity_manager', getRepository]
+        arguments:
+            - Domain\Model\Inscricao\Inscricao

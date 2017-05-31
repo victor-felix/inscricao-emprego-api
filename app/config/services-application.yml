@@ -1,0 +1,4 @@
+services:
+    app.inscricao.service:
+        class: AppBundle\Service\InscricaoService
+        arguments: ['@inscricao.repository']

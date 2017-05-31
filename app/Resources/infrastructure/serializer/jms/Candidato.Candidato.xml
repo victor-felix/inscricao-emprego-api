@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<serializer>
+    <class name="Domain\Model\Candidato\Candidato">
+        <property name="nome" type="string" groups="default" />
+        <property name="cpf" type="string" groups="default" />
+    </class>
+</serializer>

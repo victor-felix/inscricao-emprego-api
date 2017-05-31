@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+    <entity repository-class="Infrastructure\Persistence\Doctrine\InscricaoRepository"
+            name="Domain\Model\Inscricao\Inscricao"
+            table="tb_inscricao">
+        <id name="id" type="integer" column="id_inscricao">
+            <generator strategy="AUTO"/>
+        </id>
+
+        <many-to-one target-entity="Domain\Model\Candidato\Candidato" field="candidato">
+            <cascade>
+                <cascade-persist/>
+            </cascade>
+            <join-column name="id_candidato" referenced-column-name="id_candidato" />
+        </many-to-one>
+    </entity>
+</doctrine-mapping>

@@ -1,0 +1,28 @@
+# Doctrine Configuration
+doctrine:
+    dbal:
+        driver:   "%database_driver%"
+        password: "%database_password%"
+        charset:  UTF8
+        mapping_types:
+            xml:      string
+            jsonb:    string
+            tsvector: string
+            _text:    string
+    orm:
+        auto_generate_proxy_classes: "%kernel.debug%"
+        default_entity_manager: default
+        entity_managers:
+            default:
+                mappings:
+                    Inscricao:
+                        dir:       "%kernel.root_dir%/../app/Resources/infrastructure/doctrine/inscricao"
+                        type:      xml
+                        prefix:    Domain\Model\Inscricao
+                        is_bundle: false
+
+                    Candidato:
+                        dir:       "%kernel.root_dir%/../app/Resources/infrastructure/doctrine/candidato"
+                        type:      xml
+                        prefix:    Domain\Model\Candidato
+                        is_bundle: false
