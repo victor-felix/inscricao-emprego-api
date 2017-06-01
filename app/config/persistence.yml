@@ -26,3 +26,15 @@ doctrine:
                         type:      xml
                         prefix:    Domain\Model\Candidato
                         is_bundle: false
+
+                    ExperienciaProfissional:
+                        dir:       "%kernel.root_dir%/../app/Resources/infrastructure/doctrine/experienciaProfissional"
+                        type:      xml
+                        prefix:    Domain\Model\ExperienciaProfissional
+                        is_bundle: false
+
+                    HabilidadeTecnica:
+                        dir:       "%kernel.root_dir%/../app/Resources/infrastructure/doctrine/habilidadeTecnica"
+                        type:      xml
+                        prefix:    Domain\Model\HabilidadeTecnica
+                        is_bundle: false

@@ -2,6 +2,9 @@
 
 namespace Domain\Model\Candidato;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
+
 class Candidato
 {
     /**
@@ -32,6 +35,11 @@ class Candidato
     /**
      * @var string
      */
+    private $telefone;
+
+    /**
+     * @var Collection
+     */
     private $habilidadesTecnicas;
 
     /**
@@ -40,14 +48,37 @@ class Candidato
     private $link;
 
     /**
-     * @var string
+     * @var Collection
      */
-    private $experienciaProfissional;
+    private $experienciasProfissionais;
 
     /**
      * @var string
      */
     private $anexo;
+
+    /**
+     * Candidato constructor.
+     * @param string $nome
+     * @param string $cpf
+     * @param string $email
+     * @param string $celular
+     * @param string $telefone
+     * @param string $link
+     * @param string $anexo
+     */
+    public function __construct($nome, $cpf, $email, $celular, $telefone, $link, $anexo)
+    {
+        $this->nome = $nome;
+        $this->cpf = $cpf;
+        $this->email = $email;
+        $this->celular = $celular;
+        $this->telefone = $telefone;
+        $this->habilidadesTecnicas = new ArrayCollection();
+        $this->link = $link;
+        $this->experienciasProfissionais = new ArrayCollection();
+        $this->anexo = $anexo;
+    }
 
     /**
      * @return string
@@ -82,7 +113,7 @@ class Candidato
     }
 
     /**
-     * @return string
+     * @return Collection
      */
     public function getHabilidadesTecnicas()
     {
@@ -98,11 +129,11 @@ class Candidato
     }
 
     /**
-     * @return string
+     * @return Collection
      */
-    public function getExperienciaProfissional()
+    public function getExperienciasProfissionais()
     {
-        return $this->experienciaProfissional;
+        return $this->experienciasProfissionais;
     }
 
     /**

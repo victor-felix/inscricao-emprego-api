@@ -3,5 +3,16 @@
     <class name="Domain\Model\Candidato\Candidato">
         <property name="nome" type="string" groups="default" />
         <property name="cpf" type="string" groups="default" />
+        <property name="email" type="string" groups="default" />
+        <property name="celular" type="string" groups="default" />
+        <property name="telefone" type="string" groups="default" />
+        <property name="link" type="string" groups="default" />
+        <property name="anexo" type="string" groups="default" />
+        <property name="habilidadesTecnicaos" groups="default">
+            <type><![CDATA[ArrayCollection<Domain\Model\HabilidadeTecnica\HabilidadeTecnica>]]></type>
+        </property>
+        <property name="experienciasProfissionais" groups="default">
+            <type><![CDATA[ArrayCollection<Domain\Model\ExperienciaProfissional\ExperienciaProfissional>]]></type>
+        </property>
     </class>
 </serializer>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+    <entity name="Domain\Model\HabilidadeTecnica\HabilidadeTecnica"
+            table="tb_habilidade_tecnica">
+        <id name="id" type="integer" column="id_habilidade_tecnica">
+            <generator strategy="AUTO"/>
+        </id>
+
+        <field name="descricao" type="string" column="descricao" />
+    </entity>
+</doctrine-mapping>
