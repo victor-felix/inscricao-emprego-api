@@ -9,6 +9,11 @@ use Domain\Service\InscricaoServiceInterface;
 class InscricaoService implements InscricaoServiceInterface
 {
     /**
+     * @var EventDispatcherService
+     */
+    private $eventDispatcherService;
+
+    /**
      * @var InscricaoRepositoryInterface
      */
     private $inscricaoRepository;
@@ -17,12 +22,23 @@ class InscricaoService implements InscricaoServiceInterface
      * InscricaoService constructor.
      * @param InscricaoRepositoryInterface $inscricaoRepository
      */
-    public function __construct(InscricaoRepositoryInterface $inscricaoRepository)
-    {
+    public function __construct(EventDispatcherService $eventDispatcherService,
+                                InscricaoRepositoryInterface $inscricaoRepository
+    ) {
+        $this->eventDispatcherService = $eventDispatcherService;
         $this->inscricaoRepository = $inscricaoRepository;
     }
 
+    /**
+     * @param Inscricao $inscricao
+     * @return int
+     */
     public function inscrever(Inscricao $inscricao) {
+        $inscricao->gerarCodigoConfirmacao();
+
         $this->inscricaoRepository->save($inscricao);
+        $this->eventDispatcherService->dispatchInscricaoEvent($inscricao);
+
+        return $inscricao->getId();
     }
 }

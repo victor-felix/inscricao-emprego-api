@@ -38,3 +38,9 @@ doctrine:
                         type:      xml
                         prefix:    Domain\Model\HabilidadeTecnica
                         is_bundle: false
+
+                    Oportunidade:
+                        dir:       "%kernel.root_dir%/../app/Resources/infrastructure/doctrine/oportunidade"
+                        type:      xml
+                        prefix:    Domain\Model\Oportunidade
+                        is_bundle: false

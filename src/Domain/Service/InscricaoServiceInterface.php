@@ -8,7 +8,7 @@ interface InscricaoServiceInterface
 {
     /**
      * @param Inscricao $inscricao
-     * @return void
+     * @return int
      */
     public function inscrever(Inscricao $inscricao);
 }

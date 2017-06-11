@@ -1,0 +1,11 @@
+services:
+    app.cors.eventlistener:
+        class: AppBundle\EventListener\CorsListener
+        tags:
+            - { name: kernel.event_subscriber }
+
+    app.send-email.subscriber:
+        class: AppBundle\EventListener\EnviarEmailSubscriber
+        tags:
+            - { name: kernel.event_subscriber }
+        arguments: ['@infra.email.service']

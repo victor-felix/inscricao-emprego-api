@@ -6,3 +6,6 @@ services:
     infra.json_response.service:
         class: Infrastructure\Service\JsonResponseService
         arguments: ['@infra.serializer.service']
+
+    infra.email.service:
+        class: Infrastructure\Service\EmailService

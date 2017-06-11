@@ -9,11 +9,17 @@
             <generator strategy="AUTO"/>
         </id>
 
+        <field name="codigoConfirmacao" type="string" column="codigo_confirmacao" length="6" />
+        <field name="ativa" type="boolean" column="is_ativa" nullable="true" />
+
         <many-to-one target-entity="Domain\Model\Candidato\Candidato" field="candidato">
             <cascade>
                 <cascade-persist/>
             </cascade>
             <join-column name="id_candidato" referenced-column-name="id_candidato" />
+        </many-to-one>
+        <many-to-one target-entity="Domain\Model\Oportunidade\Oportunidade" field="oportunidade">
+            <join-column name="id_oportunidade" referenced-column-name="id_oportunidade" />
         </many-to-one>
     </entity>
 </doctrine-mapping>

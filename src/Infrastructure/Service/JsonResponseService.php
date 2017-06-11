@@ -103,7 +103,7 @@ final class JsonResponseService
         }
 
         return new Response(
-            $this->jsonService->toJsonByGroups($objeto, $grupos),
+            $this->serializerService->toJsonByGroups($objeto, $grupos),
             $code,
             ['Content-type' => 'application/json']
         );

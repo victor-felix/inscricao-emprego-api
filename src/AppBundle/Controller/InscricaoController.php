@@ -4,6 +4,9 @@ namespace AppBundle\Controller;
 
 use Domain\Model\Inscricao\Inscricao;
 use FOS\RestBundle\Controller\FOSRestController;
+use Swift_Mailer;
+use Swift_Message;
+use Swift_SmtpTransport;
 use Symfony\Component\Config\Definition\Exception\Exception;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -24,12 +27,14 @@ class InscricaoController extends FOSRestController
         $inscricaoService = $this->get('app.inscricao.service');
 
         try{
+            /** @var Inscricao $inscricao */
             $inscricao = $serializerService->converter($request->getContent(), Inscricao::class);
-            $inscricaoService->inscrever($inscricao);
+            $inscricaoId = $inscricaoService->inscrever($inscricao);
         }catch (Exception $exception) {
+            return $exception->getMessage();
             return $jsonResponse->badRequest($exception->getMessage());
         }
 
-        return $jsonResponse->success();
+        return $jsonResponse->success($inscricaoId);
     }
 }

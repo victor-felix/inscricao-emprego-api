@@ -1,7 +1,7 @@
 jms_serializer:
     handlers:
         datetime:
-            default_format: 'Y-m-d\TH:i:s\Z'
+            default_format: 'd/m/Y'
             default_timezone: 'UTC'
     metadata:
         auto_detection: true
@@ -9,3 +9,11 @@ jms_serializer:
             DomainModel:
                 namespace_prefix: Domain\Model
                 path: '%kernel.root_dir%/Resources/infrastructure/serializer/jms'
+
+services:
+
+    relation_handler:
+        class: Infrastructure\Serializer\RelationsHandler
+        arguments: ["@doctrine.orm.entity_manager"]
+        tags:
+             - {name: "jms_serializer.handler", type : Domain\Model\Oportunidade\Oportunidade, direction: "deserialization", format: "json", method: "serializeRelations"}

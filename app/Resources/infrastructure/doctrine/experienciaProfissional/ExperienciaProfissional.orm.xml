@@ -8,6 +8,10 @@
             <generator strategy="AUTO"/>
         </id>
 
-        <field name="descricao" type="string" column="descricao" />
+        <field name="cargo" type="string" column="cargo" />
+        <field name="descricao" type="text" column="descricao" />
+        <field name="dataInicio" type="datetime" column="dt_inicio" />
+        <field name="dataFim" type="datetime" column="dt_final" />
+        <field name="trabalhoAtual" type="boolean" column="is_trabalho_atual" />
     </entity>
 </doctrine-mapping>

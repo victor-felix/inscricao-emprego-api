@@ -1,4 +1,12 @@
 services:
+    app.event-dispatcher.service:
+        class: AppBundle\Service\EventDispatcherService
+        arguments: ['@event_dispatcher']
+
     app.inscricao.service:
         class: AppBundle\Service\InscricaoService
-        arguments: ['@inscricao.repository']
+        arguments: ['@app.event-dispatcher.service', '@inscricao.repository']
+
+    app.oportunidade.service:
+        class: AppBundle\Service\OportunidadeService
+        arguments: ['@oportunidade.repository']

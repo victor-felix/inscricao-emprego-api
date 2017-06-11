@@ -16,6 +16,13 @@ parameters:
     mailer_user: ~
     mailer_password: ~
 
+    # nelmio cors
+    cors_allow_origin: 'http://localhost'
+
+    # nelmio api docs
+    api_name: 'inscricao-emprego-api'
+    api_description: 'Inscriçao de Emprego'
+
     # A secret key that's used to generate certain security-related tokens
     secret: ThisTokenIsNotSoSecretChangeIt
     jms_serializer.camel_case_naming_strategy.class: JMS\Serializer\Naming\IdenticalPropertyNamingStrategy

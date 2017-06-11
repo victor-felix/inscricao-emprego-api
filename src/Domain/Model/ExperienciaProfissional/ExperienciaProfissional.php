@@ -2,6 +2,8 @@
 
 namespace Domain\Model\ExperienciaProfissional;
 
+use DateTimeInterface;
+
 class ExperienciaProfissional
 {
     /**
@@ -12,13 +14,25 @@ class ExperienciaProfissional
     /**
      * @var string;
      */
+    private $cargo;
+
+    /**
+     * @var string;
+     */
     private $descricao;
 
     /**
-     * @return string
+     * @var DateTimeInterface
      */
-    public function getDescricao()
-    {
-        return $this->descricao;
-    }
+    private $dataInicio;
+
+    /**
+     * @var DateTimeInterface
+     */
+    private $dataFim;
+
+    /**
+     * @var bool
+     */
+    private $trabalhoAtual;
 }

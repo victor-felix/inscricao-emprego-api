@@ -34,4 +34,13 @@ class SerializerService
     {
         return $this->serializer->serialize($data, 'json', $context);
     }
+
+    public function toJsonByGroups($data, array $groups = ['default'])
+    {
+        return $this->serializer->serialize(
+            $data,
+            'json',
+            SerializationContext::create()->setGroups($groups)
+        );
+    }
 }

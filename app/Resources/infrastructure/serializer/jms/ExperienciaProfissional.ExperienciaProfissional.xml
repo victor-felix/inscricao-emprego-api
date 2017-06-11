@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <serializer>
     <class name="Domain\Model\ExperienciaProfissional\ExperienciaProfissional">
+        <property name="cargo" type="string" groups="default" />
         <property name="descricao" type="string" groups="default" />
+        <property name="dataInicio" type="DateTime" groups="default" />
+        <property name="dataFim" type="DateTime" groups="default" />
+        <property name="trabalhoAtual" type="boolean" groups="default" />
     </class>
 </serializer>
