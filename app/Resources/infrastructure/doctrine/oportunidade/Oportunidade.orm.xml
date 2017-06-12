@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+    <entity repository-class="Infrastructure\Persistence\Doctrine\OportunidadeRepository"
+            name="Domain\Model\Oportunidade\Oportunidade"
+            table="tb_oportunidade">
+        <id name="id" type="integer" column="id_oportunidade">
+            <generator strategy="AUTO"/>
+        </id>
+
+        <field name="titulo" type="string" column="titulo" />
+        <field name="descricao" type="text" column="descricao" />
+        <field name="dataInicio" type="datetime" column="dt_inicio"/>
+        <field name="dataFinal" type="datetime" column="dt_final"/>
+        <field name="qtdVagas" type="integer" column="qtd_vagas" />
+    </entity>
+</doctrine-mapping>

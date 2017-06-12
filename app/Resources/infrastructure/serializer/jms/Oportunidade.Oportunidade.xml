@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<serializer>
+    <class name="Domain\Model\Oportunidade\Oportunidade">
+        <property name="id" type="string" groups="default" />
+        <property name="titulo" type="string" groups="default" />
+        <property name="dataInicio" type="DateTime" groups="default" />
+        <property name="dataFinal" type="DateTime" groups="default" />
+        <property name="descricao" type="string" groups="default" />
+        <property name="qtdVagas" type="string" groups="default" />
+    </class>
+</serializer>
