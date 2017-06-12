@@ -8,7 +8,7 @@
         <property name="telefone" type="string" groups="default" />
         <property name="link" type="string" groups="default" />
         <property name="anexo" type="string" groups="default" />
-        <property name="habilidadesTecnicaos" groups="default">
+        <property name="habilidadesTecnicas" groups="default">
             <type><![CDATA[ArrayCollection<Domain\Model\HabilidadeTecnica\HabilidadeTecnica>]]></type>
         </property>
         <property name="experienciasProfissionais" groups="default">
