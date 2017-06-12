@@ -12,5 +12,6 @@ security:
             security: false
 
     access_control:
-        - { path: ^/oportunidade, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/,             roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/oportunidade,   roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/inscricao,      roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/,               roles: IS_AUTHENTICATED_ANONYMOUSLY }

@@ -81,4 +81,8 @@ class Inscricao
     public function gerarCodigoConfirmacao() {
         $this->codigoConfirmacao = substr(uniqid(rand(), true), -6, 6);
     }
+
+    public function ativar() {
+        $this->ativa = true;
+    }
 }

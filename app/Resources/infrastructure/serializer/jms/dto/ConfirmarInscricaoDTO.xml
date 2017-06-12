@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<serializer>
+    <class name="Presentation\DataTransferObject\ConfirmarInscricaoDTO">
+        <property name="inscricao" type="Domain\Model\Inscricao\Inscricao" groups="default" />
+        <property name="codigoConfirmacao" type="string" groups="default" />
+    </class>
+</serializer>

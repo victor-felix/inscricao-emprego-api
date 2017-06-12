@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<serializer>
+    <class name="Presentation\DataTransferObject\PesquisarInscricaoDTO">
+        <property name="nome" type="string" groups="default" />
+        <property name="cpf" type="string" groups="default" />
+        <property name="oportunidade" type="Domain\Model\Oportunidade\Oportunidade" groups="default" />
+    </class>
+</serializer>
