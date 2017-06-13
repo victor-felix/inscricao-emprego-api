@@ -4,6 +4,7 @@ namespace AppBundle\Controller;
 
 use Domain\Model\Inscricao\Inscricao;
 use FOS\RestBundle\Controller\Annotations\Put;
+use FOS\RestBundle\Controller\Annotations\Get;
 use FOS\RestBundle\Controller\FOSRestController;
 use Presentation\DataTransferObject\ConfirmarInscricaoDTO;
 use Presentation\DataTransferObject\InscricaoDTO;
@@ -79,5 +80,23 @@ class InscricaoController extends FOSRestController
         }
 
         return $jsonResponse->success($resultado);
+    }
+
+    /**
+     * @Get("/inscricao/{uuidArquivo}/download")
+     * @param string $uuidArquivo
+     * @return Response
+     */
+    public function downloadAction(string $uuidArquivo) {
+        $jsonResponseService = $this->get('infra.json_response.service');
+        $storage = $this->get('infra.storage.service');
+
+        try {
+            $storage->download($uuidArquivo);
+        } catch (Exception $exception) {
+            return $jsonResponseService->notFound($exception->getMessage());
+        }
+
+        return $jsonResponseService->success();
     }
 }

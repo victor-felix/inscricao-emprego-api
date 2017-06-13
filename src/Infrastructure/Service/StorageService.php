@@ -43,7 +43,7 @@ final class StorageService
             throw new Exception('Arquivo não encontrado.');
         }
 
-        $response = new Response($this->filesystem->read($filename));
+        $response = new Response($this->fileSystem->read($filename));
 
         $response->headers->set('Content-Type',
             $this->fileSystem->getMimetype($filename));
