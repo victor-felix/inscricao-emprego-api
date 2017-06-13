@@ -143,4 +143,8 @@ class Candidato
     {
         return $this->anexo;
     }
+
+    public function addAnexo(string $fileName) {
+        $this->anexo = $fileName;
+    }
 }

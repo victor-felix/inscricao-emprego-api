@@ -6,6 +6,7 @@ use Domain\Model\Inscricao\Inscricao;
 use Domain\Model\Inscricao\InscricaoRepositoryInterface;
 use Domain\Service\InscricaoServiceInterface;
 use Exception;
+use Infrastructure\Service\StorageService;
 use Presentation\DataTransferObject\PesquisarInscricaoDTO;
 
 class InscricaoService implements InscricaoServiceInterface
@@ -21,14 +22,23 @@ class InscricaoService implements InscricaoServiceInterface
     private $inscricaoRepository;
 
     /**
+     * @var StorageService
+     */
+    private $storageService;
+
+    /**
      * InscricaoService constructor.
+     * @param EventDispatcherService $eventDispatcherService
      * @param InscricaoRepositoryInterface $inscricaoRepository
+     * @param StorageService $storageService
      */
     public function __construct(EventDispatcherService $eventDispatcherService,
-                                InscricaoRepositoryInterface $inscricaoRepository
+                                InscricaoRepositoryInterface $inscricaoRepository,
+                                StorageService $storageService
     ) {
         $this->eventDispatcherService = $eventDispatcherService;
         $this->inscricaoRepository = $inscricaoRepository;
+        $this->storageService = $storageService;
     }
 
     /**
@@ -37,6 +47,11 @@ class InscricaoService implements InscricaoServiceInterface
      * @throws Exception
      */
     public function inscrever(Inscricao $inscricao) {
+
+        if($inscricao->hasAnexo()) {
+            $nomeArquivo = $this->storageService->salvarBase64($inscricao->getCandidato()->getAnexo());
+            $inscricao->addAnexoCandidato($nomeArquivo);
+        }
 
         $existe = $this->inscricaoRepository->findOneByCpfOportunidade($inscricao);
 

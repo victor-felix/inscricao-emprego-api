@@ -5,7 +5,7 @@ services:
 
     app.inscricao.service:
         class: AppBundle\Service\InscricaoService
-        arguments: ['@app.event-dispatcher.service', '@inscricao.repository']
+        arguments: ['@app.event-dispatcher.service', '@inscricao.repository', '@infra.storage.service']
 
     app.oportunidade.service:
         class: AppBundle\Service\OportunidadeService

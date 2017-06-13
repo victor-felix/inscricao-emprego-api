@@ -85,4 +85,15 @@ class Inscricao
     public function ativar() {
         $this->ativa = true;
     }
+
+    /**
+     * return bool
+     */
+    public function hasAnexo() {
+        return !!$this->getCandidato()->getAnexo();
+    }
+
+    public function addAnexoCandidato(string $fileName) {
+        $this->getCandidato()->addAnexo($fileName);
+    }
 }

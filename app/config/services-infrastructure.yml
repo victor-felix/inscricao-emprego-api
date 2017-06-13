@@ -9,3 +9,6 @@ services:
 
     infra.email.service:
         class: Infrastructure\Service\EmailService
+
+    infra.storage.service:
+        class: Infrastructure\Service\StorageService
