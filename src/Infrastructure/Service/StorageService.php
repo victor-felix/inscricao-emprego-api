@@ -51,7 +51,6 @@ final class StorageService
         $response->headers->set('Expires', 0);
         $response->headers->set('Cache-Control',
             'must-revalidate, post-check=0, pre-check=0');
-        $response->headers->set('Pragma', 'public');
         $response->headers->set('Content-Length',
             $this->fileSystem->getSize($filename));
 
