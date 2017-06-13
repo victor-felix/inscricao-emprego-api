@@ -10,6 +10,13 @@ A Symfony project created on May 30, 2017, 7:03 pm.
 
 =================================
 
+### Arquivo
+
+1. No caminho "/" do computador criar pasta "inscricao-emprego" e dentro dela outra pasta "candidato".
+2. Nesta pasta será salvo os anexos que o candidato colocou na inscrição de emprego.
+
+=================================
+
 ### Cache
 
 1. No caminho "/" do computador criar pasta "temporario", dentro de temporario criar "inscricao-emprego", dentro de inscricao-emprego, criar "cache" e "log" separados.
