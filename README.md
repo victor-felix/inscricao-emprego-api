@@ -13,7 +13,7 @@ A Symfony project created on May 30, 2017, 7:03 pm.
 ### Cache
 
 1. No caminho "/" do computador criar pasta "temporario", dentro de temporario criar "inscricao-emprego", dentro de inscricao-emprego, criar "cache" e "log" separados.
-2. Nestas pastas será armezado tudo de cache, referente ao doctrine, serializer, twig, logs, entre outros.
+2. Nestas pastas será armazenado tudo de cache, referente ao doctrine, serializer, twig, logs, entre outros.
 
 ======================
 
