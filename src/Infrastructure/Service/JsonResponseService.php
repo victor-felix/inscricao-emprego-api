@@ -3,6 +3,7 @@
 namespace Infrastructure\Service;
 
 use JMS\Serializer\Serializer;
+use Presentation\DataTransferObject\SimpleMessageDTO;
 use Symfony\Component\HttpFoundation\Response;
 
 final class JsonResponseService
@@ -107,5 +108,10 @@ final class JsonResponseService
             $code,
             ['Content-type' => 'application/json']
         );
+    }
+
+    private function objetoResposta(string $mensagem = null)
+    {
+        return $mensagem ? new SimpleMessageDTO($mensagem) : null;
     }
 }

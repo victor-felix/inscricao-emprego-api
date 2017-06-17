@@ -7,6 +7,7 @@ use Exception;
 use FOS\RestBundle\Controller\Annotations\Get;
 use FOS\RestBundle\Controller\Annotations\Post;
 use FOS\RestBundle\Controller\FOSRestController;
+use Presentation\DataTransferObject\OportunidadeDTO;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -25,7 +26,16 @@ class OportunidadeController extends FOSRestController
         $oportunidadeService = $this->get('app.oportunidade.service');
 
         try{
-            $oportunidade = $serializerService->converter($request->getContent(), Oportunidade::class);
+            $oportunidadeDTO = $serializerService->converter($request->getContent(), OportunidadeDTO::class);
+
+            $oportunidade = new Oportunidade(
+                $oportunidadeDTO->getTitulo(),
+                $oportunidadeDTO->getDescricao(),
+                $oportunidadeDTO->getQtdVagas(),
+                $oportunidadeDTO->getDataInicio(),
+                $oportunidadeDTO->getDataFinal()
+            );
+
             $oportunidadeService->salvar($oportunidade);
         } catch (Exception $exception) {
             return $jsonResponse->badRequest($exception->getMessage());

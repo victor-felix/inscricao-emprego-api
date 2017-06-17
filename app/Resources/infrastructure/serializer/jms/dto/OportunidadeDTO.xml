@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<serializer>
+    <class name="Presentation\DataTransferObject\OportunidadeDTO">
+        <property name="titulo" type="string" groups="default" />
+        <property name="descricao" type="string" groups="default" />
+        <property name="dataInicio" type="DateTime" groups="default" />
+        <property name="dataFinal" type="DateTime" groups="default" />
+        <property name="qtdVagas" type="string" groups="default" />
+    </class>
+</serializer>
