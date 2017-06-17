@@ -12,6 +12,6 @@
         <field name="descricao" type="text" column="descricao" />
         <field name="dataInicio" type="datetime" column="dt_inicio" />
         <field name="dataFim" type="datetime" column="dt_final" />
-        <field name="trabalhoAtual" type="boolean" column="is_trabalho_atual" />
+        <field name="trabalhoAtual" type="boolean" column="is_trabalho_atual" nullable="true" />
     </entity>
 </doctrine-mapping>
